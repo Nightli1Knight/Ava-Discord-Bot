@@ -1,0 +1,24 @@
+{
+  "name": "ava~bot",
+  "version": "1.0.0",
+  "description": "Node.js Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nightli1Knight",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/builders": "^1.9.0",
+    "axios": "^1.7.9",
+    "discord.js": "^14.16.1",
+    "dotenv": "^16.4.5",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.45",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "reddit-image-fetcher": "^2.0.12",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}
