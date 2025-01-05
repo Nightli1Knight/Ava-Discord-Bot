@@ -16,7 +16,8 @@ npm install (Installs node_modules & package-lock.json)
 ### Update .env
 ```
 TOKEN = Discord Bot Token  
-WEATHER_API_KEY = WeatherAPI Key for weather.js  
+WEATHER_API_KEY = WeatherAPI Key for weather.js
+GIF_API_KEY = Giphy.com api for gif.js  
 CLIENT_ID = Discord Bot ID  
 BOT_VERSION = Discord Bot Version (optional)
 ```
