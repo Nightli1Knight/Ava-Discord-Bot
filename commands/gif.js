@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+require('dotenv').config();
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -11,12 +12,12 @@ module.exports = {
     async execute(interaction) {
         const fetch = (await import('node-fetch')).default;
         const keyword = interaction.options.getString('keyword');
+        const apiKey = process.env.GIF_API_KEY;
 
-        // Acknowledge the interaction immediately
         await interaction.deferReply();
 
         try {
-            const response = await fetch(`Put here giphy.com API`);
+            const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=1`);
             const data = await response.json();
             if (data.data && data.data.length > 0) {
                 await interaction.editReply({ files: [data.data[0].images.original.url] });
@@ -34,8 +35,10 @@ module.exports = {
         }
         const fetch = (await import('node-fetch')).default;
         const keyword = args.join(' ');
+        const apiKey = process.env.GIF_API_KEY;
+
         try {
-            const response = await fetch(`Put here giphy.com API`);
+            const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=1`);
             const data = await response.json();
             if (data.data && data.data.length > 0) {
                 message.channel.send({ files: [data.data[0].images.original.url] });
